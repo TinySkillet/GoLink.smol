@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2vw;
+}
+/* 
+.heading-img {
+  height: 3vw;
+  width: 3vw;
+} */
+
+.heading > .heading-title {
+  font-size: 2.8vw;
+  margin-top: 1.5vw;
+  color: cyan;
+}
+
+.heading-title > span {
+  color: white;
+}
+
+.heading > .heading-subtitle {
+  font-size: 2.8vw;
+  color: white;
+}
+
+.heading p {
+  margin-top: 2vw;
+  font-size: 1.2vw;
+  color: white;
+}
+
+.heading a {
+  margin-top: 3vw;
+  text-decoration: none;
+  color: cyan;
+  font-size: 1.2vw;
+}
+
+.urlForm {
+  margin-top: 5vw;
+  display: flex;
+  gap: 1vw;
+}
+
+.urlForm input {
+  border: 0.25vw solid cyan;
+  border-radius: 0.5vw;
+  color: white;
+  width: 35vw;
+  background-color: black;
+  padding: 0.5vw;
+  outline: none;
+  font-size: 1.5vw;
+  letter-spacing: 1.25px;
+}
+
+button {
+  border: 0.25vw solid;
+  border-radius: 0.5vw;
+  padding: 0.5vw;
+  font-size: 1.5vw;
+  cursor: pointer;
+  transition: box-shadow 0.4s ease;
+  font-weight: bold;
+  border-color: white;
+  color: black;
+  background-color: white;
+}
+
+button.goback-btn {
+  margin-top: 2vw;
+}
+
+.goback-btn:hover {
+  box-shadow: 0 0 15px #0ff, 0 0 25px rgba(0, 255, 255, 0.6),
+    0 0 35px rgba(0, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.shorten-btn:hover {
+  box-shadow: 0 0 15px #0ff, 0 0 25px rgba(0, 255, 255, 0.6),
+    0 0 35px rgba(0, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}

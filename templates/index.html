@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GoLink</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="heading">
+      <h1 class="heading-title">GoLink<span>.smol</span></h1>
+    </div>
+    <form
+      class="urlForm"
+      hx-post="/make-it-smol"
+      hx-target="form"
+      hx-swap="outerHTML"
+    >
+      <input
+        type="text"
+        autocomplete="off"
+        placeholder="Enter your URL to shorten!"
+        name="fullUrl"
+        id="linkInput"
+      />
+      <button type="submit" class="shorten-btn">Make it Smol!</button>
+    </form>
+
+    <script src="/static/htmx.min.js"></script>
+  </body>
+</html>
