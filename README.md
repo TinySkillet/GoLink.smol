@@ -68,15 +68,13 @@ The server will be available at `http://localhost:8080`
 
 ```
 .
-├── main.go              # Entry point, server initialization
-├── redis.go             # Redis store implementation
-├── handlers.go          # HTTP handlers
-├── templates.go         # Template and route setup
+├── main.go             # Entry point, server initialization
+├── storage.go          # Redis store implementation
+├── handlers.go         # HTTP handlers
+├── api.go              # Template and route setup
 ├── utils.go            # Utility functions
 ├── .env                # Environment configuration
 ├── templates/          # HTML templates
-│   ├── index.html
-│   └── notfound.html
 └── static/             # Static assets
 ```
 
