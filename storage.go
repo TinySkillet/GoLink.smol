@@ -5,7 +5,6 @@ import (
 	"crypto/rand"
 	"crypto/sha256"
 	"encoding/hex"
-	"fmt"
 	"hash"
 	"log"
 	"os"
@@ -36,12 +35,11 @@ func NewRedisStore() *RedisStore {
 		log.Fatal("An error occurred, error: ", err)
 	}
 
-	val, err := db.Get(context.Background(), "foo").Result()
+	_, err = db.Get(context.Background(), "foo").Result()
 	if err != nil {
 		log.Fatalf("Unable to retrieve value to provided key %s, error: %v", "foo", err)
 	}
 	log.Printf("Connected to Redis server succesfully!")
-	fmt.Println("foo", val)
 	return &RedisStore{db}
 }
 
@@ -54,7 +52,6 @@ func (r *RedisStore) mapURL(ctx context.Context, hash, fullURL string) error {
 // retrieves the mapped fullURL for the hash
 func (r *RedisStore) getFullURL(ctx context.Context, hash string) (string, error) {
 	val, err := r.db.Get(ctx, hash).Result()
-	log.Println(val)
 	if err != nil {
 		return "", err
 	}

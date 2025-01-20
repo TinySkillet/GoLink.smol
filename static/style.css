@@ -82,20 +82,11 @@ button {
   border-color: white;
   color: black;
   background-color: white;
+  box-shadow: 0 0 15px #0ff, 0 0 25px rgba(0, 255, 255, 0.6),
+    0 0 35px rgba(0, 255, 255, 0.3);
+  transition: all 0.3s ease;
 }
 
 button.goback-btn {
   margin-top: 2vw;
-}
-
-.goback-btn:hover {
-  box-shadow: 0 0 15px #0ff, 0 0 25px rgba(0, 255, 255, 0.6),
-    0 0 35px rgba(0, 255, 255, 0.3);
-  transition: all 0.3s ease;
-}
-
-.shorten-btn:hover {
-  box-shadow: 0 0 15px #0ff, 0 0 25px rgba(0, 255, 255, 0.6),
-    0 0 35px rgba(0, 255, 255, 0.3);
-  transition: all 0.3s ease;
 }

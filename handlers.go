@@ -26,7 +26,7 @@ func (g *GoLinkServer) shortenURL(w http.ResponseWriter, r *http.Request) {
       <button 
 				type="button" 
 				hx-on:click="navigator.clipboard.writeText(document.getElementById('linkInput').value);
-				this.textContent ='Copied!';
+				this.textContent ='Copied';"
 				class="copy-btn">
 				Copy
 			</button>
