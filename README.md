@@ -2,7 +2,7 @@
 
 A modern, high-performance URL shortener built with Go, HTMX, and Redis. GoLink.smol uses SHA-256 hashing with collision handling to generate unique, shortened URLs while ensuring fast lookups and redirects.
 
-<img src="./static/GoLinkDemoGIF.gif" width="400" height="500" alt="Alt Text">
+<img src="./static/GoLinkDemoGIF.gif" width="800" height="400" alt="Alt Text">
 
 ## Features
 
