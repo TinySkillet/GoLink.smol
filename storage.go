@@ -46,7 +46,7 @@ func NewRedisStore() *RedisStore {
 }
 
 // saves the key value pair, hash : fullURL(value)
-func (r *RedisStore) mapURL(ctx context.Context, fullURL string, hash string) error {
+func (r *RedisStore) mapURL(ctx context.Context, hash, fullURL string) error {
 	err := r.db.Set(ctx, hash, fullURL, time.Hour*24*15).Err()
 	return err
 }
@@ -54,6 +54,7 @@ func (r *RedisStore) mapURL(ctx context.Context, fullURL string, hash string) er
 // retrieves the mapped fullURL for the hash
 func (r *RedisStore) getFullURL(ctx context.Context, hash string) (string, error) {
 	val, err := r.db.Get(ctx, hash).Result()
+	log.Println(val)
 	if err != nil {
 		return "", err
 	}

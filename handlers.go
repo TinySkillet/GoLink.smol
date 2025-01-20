@@ -23,7 +23,13 @@ func (g *GoLinkServer) shortenURL(w http.ResponseWriter, r *http.Request) {
         id="linkInput"
 				value="%s"
       />
-      <button class="copy-btn">Copy</button>
+      <button 
+				type="button" 
+				hx-on:click="navigator.clipboard.writeText(document.getElementById('linkInput').value);
+				this.textContent ='Copied!';
+				class="copy-btn">
+				Copy
+			</button>
 			<button class="reset-btn" hx-get="/" hx-target="body">Reset</button>
     </form>`
 
@@ -56,4 +62,10 @@ func (g *GoLinkServer) checkLink(link string) error {
 		return err
 	}
 	return nil
+}
+
+func (g *GoLinkServer) HandleRedirect(w http.ResponseWriter, r *http.Request) {
+	urlKey := r.PathValue("id")
+	mappedUrl, _ := g.store.getFullURL(r.Context(), urlKey)
+	http.Redirect(w, r, mappedUrl, 302)
 }

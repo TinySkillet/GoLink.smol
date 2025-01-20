@@ -29,6 +29,9 @@ func (g *GoLinkServer) Run() {
 	fs := http.FileServer(http.Dir("./static"))
 	router.Handle("/static/", http.StripPrefix("/static/", fs))
 
+	// handle redirect
+	router.HandleFunc("/{id}", g.HandleRedirect)
+
 	// templates
 	g.loadTemplates(router)
 
