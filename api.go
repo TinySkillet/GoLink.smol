@@ -36,7 +36,7 @@ func (g *GoLinkServer) Run() {
 	g.loadTemplates(router)
 
 	// receives htmx request
-	router.HandleFunc("/make-it-smol", g.shortenURL)
+	router.HandleFunc("POST /make-it-smol", g.shortenURL)
 
 	server := &http.Server{
 		Addr:    g.listenAddr,

@@ -93,6 +93,6 @@ func (r *RedisStore) generateKey(hasher hash.Hash, url []byte) (string, error) {
 
 	hash := hasher.Sum(nil)
 	// use only the first 6 bytes
-	key := hex.EncodeToString(hash[:4])
+	key := hex.EncodeToString(hash[:6])
 	return key, nil
 }
